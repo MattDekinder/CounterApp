@@ -1,4 +1,4 @@
-package ca.ualberta.cs.counterapp.util;
+package ca.ualberta.cs.counterapp;
 
 import android.app.Activity;
 import android.view.View;

@@ -1,6 +1,5 @@
 package ca.ualberta.cs.counterapp;
 
-import ca.ualberta.cs.counterapp.util.SystemUiHider;
 
 import android.annotation.TargetApi;
 import android.app.Activity;

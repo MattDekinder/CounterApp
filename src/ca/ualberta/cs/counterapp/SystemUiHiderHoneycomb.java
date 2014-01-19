@@ -1,4 +1,4 @@
-package ca.ualberta.cs.counterapp.util;
+package ca.ualberta.cs.counterapp;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
