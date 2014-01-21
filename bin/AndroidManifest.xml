@@ -24,6 +24,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="ca.ualberta.cs.counterapp.NewButtonActivity"
+            android:label="@string/title_activity_new_button" >
+        </activity>
     </application>
 
 </manifest>
