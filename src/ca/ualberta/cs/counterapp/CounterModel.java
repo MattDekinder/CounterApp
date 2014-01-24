@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class CounterModel{
 	protected Date timestamp;
-	protected int count;
+	protected int count=0;
 	protected String name;
 	protected ArrayList<Date> dateList = new ArrayList<Date>();
 	

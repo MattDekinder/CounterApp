@@ -37,7 +37,7 @@ public class CounterActivity extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_counter);
 		Button statsButton = (Button) findViewById(R.id.stats);
-		EditText field= (EditText) findViewById(R.id.edit_text);
+		final EditText field= (EditText) findViewById(R.id.edit_text);
 		
 		vi = (ListView) findViewById(R.id.counter_list);
 		
@@ -70,10 +70,14 @@ public class CounterActivity extends Activity
 			
 			@Override
 			public void onClick(View v){
-				
+				String name= field.getText().toString();
+				CounterModel cm = new CounterModel();
+				cm.setName(name);
+				dataList.add(cm);
+				adapter.notifyDataSetChanged();
 			}
 		});
-		//field.getText().toString()
+		
 		
 	}
 
