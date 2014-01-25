@@ -22,7 +22,6 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -78,7 +77,8 @@ public class CounterActivity extends Activity
 				
 				Intent i = new Intent(getApplicationContext(), NewButtonActivity.class);
 //TODO:MUST PASS SERIALIZED OBJECT TO NEXT ACTIVITY TO GENEREATE STATS. OR FIND SOME OTHER METHOD.
-//				i.putExtra(counter_model, value)
+				String jsonString = gson.toJson(cm);
+				i.putExtra("cModel", jsonString);
 				
 				startActivity(i);
 				return true;
@@ -115,7 +115,7 @@ public class CounterActivity extends Activity
 	protected void onResume()
 	{
 		super.onResume();
-		//TODO: load dataList from file ----------------------------------------------------LOAD WONT WORK!!!! AAAARRRRRRRRGGGGGGGGG
+	
 		dataList= loadFromFile();
 //		dataList = new ArrayList<CounterModel>();
 		adapter = new ListAdapter(this, dataList);

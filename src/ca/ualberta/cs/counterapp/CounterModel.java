@@ -37,5 +37,6 @@ public class CounterModel{
 	public void incCount(){
 		this.count++;
 	}
+	//TODO: insert methods to obtain stats.
 	
 }
