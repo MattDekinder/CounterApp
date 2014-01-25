@@ -9,9 +9,9 @@ public class CounterModel{
 	protected String name;
 	protected ArrayList<Date> dateList = new ArrayList<Date>();
 	
-	public Date getTimestamp(){
+	public ArrayList<Date> getTimestamp(){
 	
-		return timestamp;
+		return dateList;
 	}
 	public String getName(){
 		return name;
@@ -37,4 +37,5 @@ public class CounterModel{
 	public void incCount(){
 		this.count++;
 	}
+	
 }

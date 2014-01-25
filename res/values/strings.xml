@@ -10,5 +10,5 @@
     <string name="newCount">New counter name:</string>
     <string name="existing_counters">Existing Counters:</string>
 	<string name="increment">Count (ah ah ah)!:</string>
-	<string name="stats">statistics:</string>
+	<string name="stats">Create Counter</string>
 </resources>
