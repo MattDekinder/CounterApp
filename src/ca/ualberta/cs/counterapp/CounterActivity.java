@@ -26,14 +26,6 @@ import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-//frame layout used for popup window
-//import android.widget.FrameLayout;
-
-
-//create references to the objects defined in the xml files
-//add functionality
-//add saving
-
 
 
 public class CounterActivity extends Activity
@@ -63,10 +55,10 @@ public class CounterActivity extends Activity
 			{
 				CounterModel cm = (CounterModel) vi.getItemAtPosition(position);
 				cm.incCount();
-				
+				//REMOVE ME_____________________________________________________----------------------------------
+				cm.countPerHour();
+				//____________________________________________________________________------------------------------------------
 				saveInFile(dataList);
-				//TODO: save dataList here--------------------------------------------	
-				
 				adapter.notifyDataSetChanged();
 			}
 		});
@@ -77,7 +69,6 @@ public class CounterActivity extends Activity
 				CounterModel cm = (CounterModel) vi.getItemAtPosition(position);
 				
 				Intent i = new Intent(getApplicationContext(), NewButtonActivity.class);
-//TODO:MUST PASS SERIALIZED OBJECT TO NEXT ACTIVITY TO GENEREATE STATS. OR FIND SOME OTHER METHOD.
 				String jsonString = gson.toJson(cm);
 				i.putExtra("cModel", jsonString);
 				
@@ -94,7 +85,6 @@ public class CounterActivity extends Activity
 				CounterModel cm = new CounterModel();
 				cm.setName(name);
 				dataList.add(cm);
-				//---------------------------------------------------------saving
 				saveInFile(dataList);
 				
 				adapter.notifyDataSetChanged();
@@ -118,7 +108,6 @@ public class CounterActivity extends Activity
 		super.onResume();
 	
 		dataList= loadFromFile();
-//		dataList = new ArrayList<CounterModel>();
 		adapter = new ListAdapter(this, dataList);
 		vi.setAdapter(adapter);
 		adapter.notifyDataSetChanged();
