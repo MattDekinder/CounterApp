@@ -4,40 +4,40 @@ package ca.ualberta.cs.counterapp;
 public class MonthConvert
 {
 	public String getMonth(int code){
-		if (code ==1){
+		if (code ==0){
 			return "Jan";
 		}
-		if (code ==2){
+		if (code ==1){
 			return "Feb";
 		}
-		if (code ==3){
+		if (code ==2){
 			return "Mar";
 		}
-		if (code ==4){
+		if (code ==3){
 			return "Apr";
 		}
-		if (code ==5){
+		if (code ==4){
 			return "May";
 		}
-		if (code ==6){
+		if (code ==5){
 			return "Jun";
 		}
-		if (code ==7){
+		if (code ==6){
 			return "Jul";
 		}
-		if (code ==8){
+		if (code ==7){
 			return "Aug";
 		}
-		if (code ==9){
+		if (code ==8){
 			return "Sep";
 		}
-		if (code ==10){
+		if (code ==9){
 			return "Oct";
 		}
-		if (code ==11){
+		if (code ==10){
 			return "Nov";
 		}
-		if (code ==12){
+		if (code ==11){
 			return "Dec";
 		}
 		else{

@@ -9,18 +9,15 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/existing_counters" />
-
     <ScrollView
         android:id="@+id/scrollView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.56" >
-
 		<TextView
        		android:id="@+id/statistics_table"
         	android:layout_width="fill_parent"
-        	android:layout_height="wrap_content"
-        	android:text="@string/existing_counters" />
+        	android:layout_height="wrap_content" />
     </ScrollView>
 
 </LinearLayout>
