@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="ca.ualberta.cs.counterapp.NewButtonActivity"
+            android:name="ca.ualberta.cs.counterapp.StatsActivity"
             android:label="@string/title_activity_new_button" >
         </activity>
     </application>

@@ -9,7 +9,7 @@
         android:id="@+id/oldTweetsTitle"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/existing_counters" />
+        android:text="@string/counters" />
 
     <ListView
         android:id="@+id/counter_list"

@@ -8,7 +8,13 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="newCount">New counter name:</string>
-    <string name="existing_counters">Existing Counters:</string>
+    <string name="counts_by_hour">Counts By Hour</string>
 	<string name="increment">Count (ah ah ah)!:</string>
 	<string name="stats">Create Counter</string>
+	<string name="counters">List of Counters</string>
+	<string name="counts_by_day">Counts By Day</string>
+	<string name="counts_by_week">Counts By Week</string>
+	<string name="counts_by_month">Counts By Month</string>
+	<string name="delete">Delete\nCounter</string>
+	<string name="rename">Rename Counter</string>
 </resources>

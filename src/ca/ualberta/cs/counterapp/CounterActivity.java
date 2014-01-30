@@ -55,9 +55,6 @@ public class CounterActivity extends Activity
 			{
 				CounterModel cm = (CounterModel) vi.getItemAtPosition(position);
 				cm.incCount();
-				//REMOVE ME_____________________________________________________----------------------------------
-				cm.countPerHour();
-				//____________________________________________________________________------------------------------------------
 				saveInFile(dataList);
 				adapter.notifyDataSetChanged();
 			}
@@ -68,7 +65,7 @@ public class CounterActivity extends Activity
 			public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id){
 				CounterModel cm = (CounterModel) vi.getItemAtPosition(position);
 				
-				Intent i = new Intent(getApplicationContext(), NewButtonActivity.class);
+				Intent i = new Intent(getApplicationContext(), StatsActivity.class);
 				String jsonString = gson.toJson(cm);
 				i.putExtra("cModel", jsonString);
 				
