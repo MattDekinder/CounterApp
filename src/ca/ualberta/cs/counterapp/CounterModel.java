@@ -6,7 +6,13 @@ import java.util.Calendar;
 public class CounterModel{
 	protected int count=0;
 	protected String name;
+	protected String newName;
 	protected ArrayList<Calendar> dateList = new ArrayList<Calendar>();
+	//the next three variables are used to identify particular objects between activities
+    //for deletion and renaming by setting 1 in the correct field.
+	protected int generateStatsFlag =0;
+	protected int markedDeleteFlag = 0;
+	protected int markedRenameFlag =0;
 	
 	public ArrayList<Calendar> getTimestamp(){
 	
@@ -32,6 +38,54 @@ public class CounterModel{
 		count++;
 		Calendar time = Calendar.getInstance();
 		dateList.add(time);
+	}
+	
+	public String getNewName()
+	{
+	
+		return newName;
+	}
+	
+	public void setNewName(String newName)
+	{
+	
+		this.newName = newName;
+	}
+	
+	public int getGenerateStatsFlag()
+	{
+	
+		return generateStatsFlag;
+	}
+	
+	public void setGenerateStatsFlag(int generateStatsFlag)
+	{
+	
+		this.generateStatsFlag = generateStatsFlag;
+	}
+	
+	public int getMarkedDeleteFlag()
+	{
+	
+		return markedDeleteFlag;
+	}
+	
+	public void setMarkedDeleteFlag(int markedDeleteFlag)
+	{
+	
+		this.markedDeleteFlag = markedDeleteFlag;
+	}
+	
+	public int getMarkedRenameFlag()
+	{
+	
+		return markedRenameFlag;
+	}
+	
+	public void setMarkedRenameFlag(int markedRenameFlag)
+	{
+	
+		this.markedRenameFlag = markedRenameFlag;
 	}
 	
 	public ArrayList<String> countPerHour(){
@@ -196,5 +250,6 @@ public class CounterModel{
 		}
 		return list;
 	}
+
 	
 }
