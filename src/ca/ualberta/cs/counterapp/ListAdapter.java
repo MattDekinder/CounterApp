@@ -11,7 +11,8 @@ import android.widget.TextView;
 
 public class ListAdapter extends BaseAdapter
 {
-	
+	/*List adapter for ArrayList of CounterModel objects. Allows selection
+	 * of models from the list. */
 	ArrayList<CounterModel> counterModels;
 	private LayoutInflater inflater;
 

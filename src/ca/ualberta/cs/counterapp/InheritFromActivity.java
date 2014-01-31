@@ -20,7 +20,8 @@ public class InheritFromActivity extends Activity
 	private static final String FILENAME = "file.sav";
 	
 	protected void saveInFile(ArrayList<CounterModel> dataList) {
-		//clears file and write in each CounterModel delineated by \n
+		/*clears file,then writes each CounterModel delineated by \n 
+		 * to file FILENAME*/
 		Gson gson = new Gson();
 		
 		try {
@@ -34,16 +35,15 @@ public class InheritFromActivity extends Activity
 		}
 		fos.close();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 	}
 	
 	protected ArrayList<CounterModel> loadFromFile() {
+		/*obtains counter models from file FILENAME */
 		Gson gson = new Gson();
 		ArrayList<CounterModel> cml = new ArrayList<CounterModel>();
 
@@ -56,16 +56,16 @@ public class InheritFromActivity extends Activity
 				line = in.readLine();
 			}
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return cml;
 	}
 	
 	protected ArrayList<CounterModel> sortCounterList(ArrayList<CounterModel> dataList) {
+		/*Sorts ArrayList of counter models by count in descending order.
+		 * Returns Sorted ArrayList<CounterModel> */
 	Collections.sort(dataList, new Comparator<CounterModel>()
 			{
 				@Override

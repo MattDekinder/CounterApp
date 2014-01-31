@@ -48,6 +48,11 @@ public class CounterModel{
 	}
 	
 	public ArrayList<String> countPerHour(){
+		/*Obtains the count per hour statistic strings. This method assumes
+		 * that each count is incremented after the last in time. This 
+		 * is only untrue if the user sets the date manually or crosses date
+		 *  lines by travel, or is incrementing when the phone changes back
+		 * for DST. There are no guarantees for these cases. */
 		int hour;
 		int prevHour = 0;
 		int month =0;
@@ -101,6 +106,11 @@ public class CounterModel{
 	}
 	
 	public ArrayList<String> countPerDay(){
+		/*Obtains the count per day statistic strings. This method assumes
+		 * that each count is incremented after the last in time. This 
+		 * is only untrue if the user sets the date manually or crosses date
+		 *  lines by travel, or is incrementing when the phone changes back
+		 * for DST. There are no guarantees for these cases. */
 		int month =0;
 		int prevMonth=0;
 		int year =0;
@@ -146,6 +156,11 @@ public class CounterModel{
 	}
 	
 	public ArrayList<String> countPerMonth(){
+		/*Obtains the count per month statistic strings. This method assumes
+		 * that each count is incremented after the last in time. This 
+		 * is only untrue if the user sets the date manually or crosses date
+		 *  lines by travel, or is incrementing when the phone changes back
+		 * for DST. There are no guarantees for these cases. */
 		int month =0;
 		int prevMonth=0;
 		int year =0;
@@ -184,6 +199,12 @@ public class CounterModel{
 	}
 	
 	public ArrayList<String> countPerWeek(){
+		/*Obtains the count per week statistic strings. This method assumes
+		 * that each count is incremented after the last in time. This 
+		 * is only untrue if the user sets the date manually or crosses date
+		 *  lines by travel, or is incrementing when the phone changes back
+		 * for DST. There are no guarantees for these cases. The first day of
+		 * each week is given as Monday as per ISO date standard.*/
 		int month =0;
 		int prevMonth=0;
 		int year =0;

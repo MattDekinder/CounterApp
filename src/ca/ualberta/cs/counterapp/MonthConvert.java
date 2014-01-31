@@ -2,8 +2,11 @@ package ca.ualberta.cs.counterapp;
 
 
 public class MonthConvert
+/*Class to convert Java's Calendar object's numerical
+ * representations to strings for printing. */
 {
 	public String getMonth(int code){
+		/*Converts the month portion of Calendar objects */
 		if (code ==0){
 			return "Jan";
 		}

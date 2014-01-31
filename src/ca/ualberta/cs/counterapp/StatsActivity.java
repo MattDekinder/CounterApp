@@ -14,10 +14,11 @@ import android.widget.TextView;
 
 public class StatsActivity extends InheritFromActivity
 {
+	/*Second activity which displays statistics and allows counters to be
+	 * renamed and deleted. */
 	Gson gson = new Gson();
 	CounterModel cm;
 	ArrayList<CounterModel> dataList;
-//	Gson gson = new Gson();
 	 
 	ArrayList<String> statList = new ArrayList<String>();
 	String[] StringList = {"Count By Month","Count By Week","Count By Day", "Count By Hour"}; 
@@ -31,17 +32,16 @@ public class StatsActivity extends InheritFromActivity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_stats);
-//		Intent intent = getIntent();
-//		String jsonString = intent.getExtras().getString("cModel");
-//		final CounterModel cm = gson.fromJson(jsonString, CounterModel.class);
+		
 		dataList = loadFromFile();
+		//look through list for which CounterModel was selected in previous activity.
 		for (dataListIndex=0; dataListIndex<dataList.size(); dataListIndex++){
 			if (dataList.get(dataListIndex).getGenerateStatsFlag() == 1){
 				cm = dataList.get(dataListIndex);
 				break;
 			}
 		}
-		//reset this flag first; if the program terminates before this step then it will break
+		//reset this flag: if the program terminates before this step then it will break
 		cm.setGenerateStatsFlag(0);
 		saveInFile(dataList);
 		
@@ -51,7 +51,7 @@ public class StatsActivity extends InheritFromActivity
 		TextView tv = new TextView(getApplicationContext());
 		tv=(TextView) findViewById(R.id.statistics_table);
 		
-		statList = cm.countPerHour();
+		statList = cm.countPerHour();//default statistics displayed
 		
 		for (int i=0; i<statList.size(); i++){
 			tv.append(statList.get(i));
@@ -61,8 +61,11 @@ public class StatsActivity extends InheritFromActivity
 		cycleButton.setOnClickListener(new OnClickListener(){
 			
 			@Override
-			public void onClick(View v)
-			{
+			public void onClick(View v){
+				/*Sets button to cycle the statistics displayed to the user.
+				 * Each press changes the text in the button to correspond
+				 * to the statistics displayed and calls the appropriate method
+				 * to display those statistics */
 			((Button)findViewById(R.id.cycle_button)).setText(StringList[listIndex]);
 			listIndex++;
 			if (listIndex==4){
@@ -96,8 +99,11 @@ public class StatsActivity extends InheritFromActivity
 		renameButton.setOnClickListener(new OnClickListener(){
 			
 			@Override
-			public void onClick(View v)
-			{
+			public void onClick(View v){
+				/* This button will rename the counter to whatever is in 
+				 * rename_field. The default in this field is the counter's 
+				 * name however when changed the field will clear as feedback
+				 * that the change was successful.*/
 				EditText rename_field= (EditText) findViewById(R.id.rename_text);
 				cm.setName(rename_field.getText().toString());
 				saveInFile(dataList);
@@ -109,8 +115,8 @@ public class StatsActivity extends InheritFromActivity
 		deleteButton.setOnClickListener(new OnClickListener(){
 			
 			@Override
-			public void onClick(View v)
-			{
+			public void onClick(View v){
+				/*This button will delete the counter and return to the previous activity. */
 				dataList.remove(dataListIndex);
 				saveInFile(dataList);
 				finish();
@@ -118,5 +124,4 @@ public class StatsActivity extends InheritFromActivity
 		});
 	}
 
-//TODO: add counter removal and renaming 
 }

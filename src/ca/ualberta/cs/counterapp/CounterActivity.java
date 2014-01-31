@@ -22,6 +22,7 @@ import android.widget.ListView;
 
 public class CounterActivity extends InheritFromActivity
 {
+/* This is the main activity*/
 	ListAdapter adapter;
 	ArrayList<CounterModel> dataList;
 	ListView vi;
@@ -40,6 +41,8 @@ public class CounterActivity extends InheritFromActivity
 		vi = (ListView) findViewById(R.id.counter_list);
 		
 		vi.setOnItemClickListener(new OnItemClickListener(){
+			/*each element of this list is a counter object and is incremented and saved to
+			 * the file when it is selected by the user. */
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position,
 					long id)
@@ -54,13 +57,15 @@ public class CounterActivity extends InheritFromActivity
 		vi.setOnItemLongClickListener(new OnItemLongClickListener(){
 			
 			public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id){
+				/*This sets the long click on each item of the list to start
+				 * the StatsActivity and mark the selected model so
+				 * StatsActivity knows which counter was selected.*/
 				CounterModel cm = (CounterModel) vi.getItemAtPosition(position);
 				
 				Intent i = new Intent(getApplicationContext(), StatsActivity.class);
-				cm.setGenerateStatsFlag(1); //this distinguishes it to the other activity.
+				cm.setGenerateStatsFlag(1); //this distinguishes it to StatsActivity
 				saveInFile(dataList);
-//				String jsonString = gson.toJson(cm);
-//				i.putExtra("cModel", jsonString);
+
 				
 				startActivity(i);
 				return true;
@@ -71,6 +76,9 @@ public class CounterActivity extends InheritFromActivity
 			
 			@Override
 			public void onClick(View v){
+				/*This button will create a new counter and add it to the
+				 * list of counters with whatever test is in the edit text
+				 * field. */
 				String name= field.getText().toString();
 				CounterModel cm = new CounterModel();
 				cm.setName(name);
@@ -96,7 +104,7 @@ public class CounterActivity extends InheritFromActivity
 	protected void onResume()
 	{
 		super.onResume();
-	
+		/*the counter list is sorted whenever the activity is resumed*/
 		dataList= loadFromFile();
 		dataList = sortCounterList(dataList);
 		adapter = new ListAdapter(this, dataList);

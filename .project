@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
 	<name>CounterApp</name>
-	<comment></comment>
+	<comment>@key 32303037303533312D3130303020436F756E7465724170702F64656B696E646572 </comment>
 	<projects>
 	</projects>
 	<buildSpec>
@@ -29,5 +29,6 @@
 	<natures>
 		<nature>com.android.ide.eclipse.adt.AndroidNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>com.soyatec.additional.Nature</nature>
 	</natures>
 </projectDescription>
