@@ -21,7 +21,8 @@ public class InheritFromActivity extends Activity
 	
 	protected void saveInFile(ArrayList<CounterModel> dataList) {
 		/*clears file,then writes each CounterModel delineated by \n 
-		 * to file FILENAME*/
+		 * to file FILENAME. Modified from LonelyTwitter 
+		 * Author:Joshua Campbell 2014-01-24*/
 		Gson gson = new Gson();
 		
 		try {
@@ -43,7 +44,8 @@ public class InheritFromActivity extends Activity
 	}
 	
 	protected ArrayList<CounterModel> loadFromFile() {
-		/*obtains counter models from file FILENAME */
+		/*obtains counter models from file FILENAME. 
+		 * Modified from LonelyTwitter Author:Joshua Campbell 2014-01-24 */
 		Gson gson = new Gson();
 		ArrayList<CounterModel> cml = new ArrayList<CounterModel>();
 
