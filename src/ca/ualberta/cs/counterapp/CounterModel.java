@@ -74,14 +74,22 @@ public class CounterModel{
 			year = dateList.get(i).get(Calendar.YEAR);
 			count++;
 			
-			if (prevHour != hour || prevDay != day || month != prevMonth || year != prevYear ) {
-				date = mcv.getMonth(dateList.get(i-1).get(Calendar.MONTH));
-				list.add(date+" "+Integer.toString(day)+" "+Integer.toString(prevHour)+":00 "+Integer.toString(prevYear) + "-- "+Integer.toString(count-1)+"\n");
+			if (prevHour != hour || prevDay != day || month != prevMonth ||
+					year != prevYear ) {
+				
+				date = mcv.getMonth(prevMonth);
+				list.add(date+" "+Integer.toString(prevDay)+" "
+						+Integer.toString(prevHour)+":00 "
+						+Integer.toString(prevYear) 
+						+ "-- "+Integer.toString(count-1)+"\n");
 				count = 1;
 			}
 			if (i==dateList.size()-1) {
-				date = mcv.getMonth(dateList.get(i).get(Calendar.MONTH));
-				list.add(date+" "+Integer.toString(day)+" "+Integer.toString(hour)+":00 "+Integer.toString(prevYear) + "-- "+Integer.toString(count)+"\n");
+				date = mcv.getMonth(month);
+				list.add(date+" "+Integer.toString(day)
+						+" "+Integer.toString(hour)+":00 "
+						+Integer.toString(prevYear) + "-- "
+						+Integer.toString(count)+"\n");
 			}
 			prevHour=hour;
 			prevMonth = month;
@@ -117,12 +125,16 @@ public class CounterModel{
 			
 			if (prevDay != day || month != prevMonth || year != prevYear ) {
 				date = mcv.getMonth(dateList.get(i-1).get(Calendar.MONTH));
-				list.add(date+" "+Integer.toString(day)+" "+":00 "+Integer.toString(prevYear) + "-- "+Integer.toString(count-1)+"\n");
+				list.add(date+" "+Integer.toString(day)
+						+" "+Integer.toString(prevYear) + "-- "
+						+Integer.toString(count-1)+"\n");
 				count = 1;
 			}
 			if (i==dateList.size()-1) {
 				date = mcv.getMonth(dateList.get(i).get(Calendar.MONTH));
-				list.add(date+" "+Integer.toString(day)+" "+":00 "+Integer.toString(prevYear) + "-- "+Integer.toString(count)+"\n");
+				list.add(date+" "+Integer.toString(day)
+						+" "+Integer.toString(prevYear) 
+						+ "-- "+Integer.toString(count)+"\n");
 			}
 
 			prevMonth = month;
@@ -154,12 +166,14 @@ public class CounterModel{
 			
 			if (month != prevMonth || year != prevYear ) {
 				date = mcv.getMonth(dateList.get(i-1).get(Calendar.MONTH));
-				list.add(date+" "+":00 "+Integer.toString(prevYear) + "-- "+Integer.toString(count-1)+"\n");
+				list.add(date+" "+Integer.toString(prevYear) + "-- "
+						+Integer.toString(count-1)+"\n");
 				count = 1;
 			}
 			if (i==dateList.size()-1) {
 				date = mcv.getMonth(dateList.get(i).get(Calendar.MONTH));
-				list.add(date+" "+":00 "+Integer.toString(prevYear) + "-- "+Integer.toString(count)+"\n");
+				list.add(date+" "+Integer.toString(prevYear) + "-- "
+						+Integer.toString(count)+"\n");
 			}
 
 			prevMonth = month;
@@ -194,12 +208,14 @@ public class CounterModel{
 			
 			if (prevWeek != week || month != prevMonth || year != prevYear ) {
 				date = mcv.getMonth(dateList.get(i-1).get(Calendar.MONTH));
-				list.add(date+" "+Integer.toString(week)+" "+":00 "+Integer.toString(prevYear) + "-- "+Integer.toString(count-1)+"\n");
+				list.add("Week of "+date+" "+Integer.toString(week)+" "
+				+Integer.toString(prevYear) + "-- "+Integer.toString(count-1)+"\n");
 				count = 1;
 			}
 			if (i==dateList.size()-1) {
 				date = mcv.getMonth(dateList.get(i).get(Calendar.MONTH));
-				list.add(date+" "+Integer.toString(week)+" "+":00 "+Integer.toString(prevYear) + "-- "+Integer.toString(count)+"\n");
+				list.add("Week of "+date+" "+Integer.toString(week)+" "
+				+Integer.toString(prevYear) + "-- "+Integer.toString(count)+"\n");
 			}
 
 			prevMonth = month;

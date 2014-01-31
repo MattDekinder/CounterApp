@@ -98,6 +98,7 @@ public class CounterActivity extends InheritFromActivity
 		super.onResume();
 	
 		dataList= loadFromFile();
+		dataList = sortCounterList(dataList);
 		adapter = new ListAdapter(this, dataList);
 		vi.setAdapter(adapter);
 		adapter.notifyDataSetChanged();

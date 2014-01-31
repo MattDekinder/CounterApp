@@ -69,16 +69,16 @@ public class StatsActivity extends InheritFromActivity
 				listIndex=0;
 			}
 			if (listIndex==0){
-				statList = cm.countPerMonth();
+				statList = cm.countPerHour();
 			}
 			if (listIndex==1){
-				statList = cm.countPerWeek();
+				statList = cm.countPerMonth();
 			}
 			if (listIndex==2){
-				statList = cm.countPerDay();
+				statList = cm.countPerWeek();
 			}
 			if (listIndex==3){
-				statList = cm.countPerHour();
+				statList = cm.countPerDay();
 			}
 			TextView tv = new TextView(getApplicationContext());
 			tv=(TextView) findViewById(R.id.statistics_table);

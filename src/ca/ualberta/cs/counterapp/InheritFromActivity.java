@@ -22,14 +22,6 @@ public class InheritFromActivity extends Activity
 	protected void saveInFile(ArrayList<CounterModel> dataList) {
 		//clears file and write in each CounterModel delineated by \n
 		Gson gson = new Gson();
-		Collections.sort(dataList, new Comparator<CounterModel>()
-		{
-			@Override
-			public int compare(CounterModel lhs, CounterModel rhs)
-			{
-				return rhs.getCount() - lhs.getCount();
-			}
-		});
 		
 		try {
 		FileOutputStream fos = openFileOutput(FILENAME,
@@ -72,5 +64,16 @@ public class InheritFromActivity extends Activity
 		}
 		return cml;
 	}
-
+	
+	protected ArrayList<CounterModel> sortCounterList(ArrayList<CounterModel> dataList) {
+	Collections.sort(dataList, new Comparator<CounterModel>()
+			{
+				@Override
+				public int compare(CounterModel lhs, CounterModel rhs)
+				{
+					return rhs.getCount() - lhs.getCount();
+				}
+			});
+		return dataList;
+	}
 }
