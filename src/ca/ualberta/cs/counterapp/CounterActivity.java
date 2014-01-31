@@ -10,8 +10,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 
 import com.google.gson.Gson;
 
@@ -116,22 +114,11 @@ public class CounterActivity extends Activity
 	}
 	
 	
-	protected void saveInFile(ArrayList<CounterModel> dataList) {
+	private void saveInFile(ArrayList<CounterModel> dataList) {
 		//clears file and write in each CounterModel delineated by \n
 		try {
 		FileOutputStream fos = openFileOutput(FILENAME,
 				Context.MODE_PRIVATE);
-		
-/*		Collections.sort(dataList, new Comparator<CounterModel>()
-		{
-			@Override
-			public int compare(CounterModel lhs, CounterModel rhs)
-			{
-				return rhs.getCount() -lhs.getCount();
-			}
-			
-		});*/
-		
 		for (int i=0; i<dataList.size(); i++){
 		
 			String jsonString = gson.toJson(dataList.get(i)) + "\n"; 
@@ -149,7 +136,7 @@ public class CounterActivity extends Activity
 		
 	}
 	
-	protected ArrayList<CounterModel> loadFromFile() {
+	private ArrayList<CounterModel> loadFromFile() {
 		ArrayList<CounterModel> cml = new ArrayList<CounterModel>();
 
 		try {
@@ -168,5 +155,11 @@ public class CounterActivity extends Activity
 			e.printStackTrace();
 		}
 		return cml;
+	}
+
+	@Override
+	protected void onStop()
+	{
+		super.onStop();
 	}
 }
