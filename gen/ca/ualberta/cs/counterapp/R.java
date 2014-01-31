@@ -53,11 +53,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     }
     public static final class layout {
         public static final int activity_counter=0x7f030000;
-        public static final int activity_stats=0x7f030001;
-        public static final int counter_object=0x7f030002;
+        public static final int activity_inherit_from=0x7f030001;
+        public static final int activity_stats=0x7f030002;
+        public static final int counter_object=0x7f030003;
     }
     public static final class menu {
-        public static final int new_button=0x7f080000;
+        public static final int inherit_from=0x7f080000;
+        public static final int new_button=0x7f080001;
     }
     public static final class string {
         public static final int action_settings=0x7f060004;
@@ -75,6 +77,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int newCount=0x7f060006;
         public static final int rename=0x7f06000f;
         public static final int stats=0x7f060009;
+        public static final int title_activity_inherit_from=0x7f060010;
         public static final int title_activity_new_button=0x7f060003;
     }
     public static final class style {

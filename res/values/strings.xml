@@ -4,17 +4,19 @@
     <string name="app_name">CounterApp</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="title_activity_new_button">NewButtonActivity</string>
-    <string name="action_settings">Settings</string>
+    <string name="title_activity_new_button">CounterApp Stats/Options</string>
+    <string name="action_settings">Where is this string!?</string>
     <string name="hello_world">Hello world!</string>
     <string name="newCount">New counter name:</string>
     <string name="counts_by_hour">Counts By Hour</string>
-	<string name="increment">Count (ah ah ah)!:</string>
-	<string name="stats">Create Counter</string>
-	<string name="counters">List of Counters</string>
-	<string name="counts_by_day">Counts By Day</string>
-	<string name="counts_by_week">Counts By Week</string>
-	<string name="counts_by_month">Counts By Month</string>
-	<string name="delete">Delete\nCounter</string>
-	<string name="rename">Rename Counter</string>
+    <string name="increment">Count (ah ah ah)!:</string>
+    <string name="stats">Create Counter</string>
+    <string name="counters">List of Counters</string>
+    <string name="counts_by_day">Counts By Day</string>
+    <string name="counts_by_week">Counts By Week</string>
+    <string name="counts_by_month">Counts By Month</string>
+    <string name="delete">Delete\nCounter</string>
+    <string name="rename">Rename Counter</string>
+    <string name="title_activity_inherit_from">InheritFromActivity</string>
+
 </resources>
