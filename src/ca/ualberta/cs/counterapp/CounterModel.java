@@ -135,7 +135,7 @@ public class CounterModel{
 			
 			if (prevDay != day || month != prevMonth || year != prevYear ) {
 				date = mcv.getMonth(dateList.get(i-1).get(Calendar.MONTH));
-				list.add(date+" "+Integer.toString(day)
+				list.add(date+" "+Integer.toString(prevDay)
 						+" "+Integer.toString(prevYear) + "-- "
 						+Integer.toString(count-1)+"\n");
 				count = 1;
@@ -204,7 +204,7 @@ public class CounterModel{
 		 * is only untrue if the user sets the date manually or crosses date
 		 *  lines by travel, or is incrementing when the phone changes back
 		 * for DST. There are no guarantees for these cases. The first day of
-		 * each week is given as Monday as per ISO date standard.*/
+		 * each week is given as a Sunday (contrary to ISO standard)*/
 		int month =0;
 		int prevMonth=0;
 		int year =0;
@@ -212,7 +212,10 @@ public class CounterModel{
 		int week=0;
 		int prevWeek=0;
 		if (dateList.size()>0) {
-			prevWeek = dateList.get(0).getFirstDayOfWeek();
+		    Calendar weekCal = (Calendar) dateList.get(0).clone();
+		    weekCal.add(Calendar.DAY_OF_WEEK, 
+		            weekCal.getFirstDayOfWeek() - weekCal.get(Calendar.DAY_OF_WEEK));
+		    prevWeek = weekCal.get(Calendar.DAY_OF_MONTH);
 			prevMonth =dateList.get(0).get(Calendar.MONTH);
 			prevYear = dateList.get(0).get(Calendar.YEAR);
 		}
@@ -222,7 +225,16 @@ public class CounterModel{
 		MonthConvert mcv = new MonthConvert();
 
 		for (int i=0; i<dateList.size(); i++){
-			week = dateList.get(i).getFirstDayOfWeek();
+			/*Calculating day of week solution found on
+			 *  http://stackoverflow.com/questions/7645178/
+			 *  getting-the-start-and-the-end-date-of-a-week-
+			 *  using-java-calendar-class  by user dacwe
+			 *  01-31-2014*/
+		    Calendar weekCal = (Calendar) dateList.get(i).clone();
+		    weekCal.add(Calendar.DAY_OF_WEEK, 
+		            weekCal.getFirstDayOfWeek() - weekCal.get(Calendar.DAY_OF_WEEK));
+		    
+			week = weekCal.get(Calendar.DAY_OF_MONTH);
 			month =dateList.get(i).get(Calendar.MONTH);
 			year = dateList.get(i).get(Calendar.YEAR);
 			count++;
