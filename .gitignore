@@ -1,7 +1,6 @@
 # From https://github.com/github/gitignore/blob/master/Android.gitignore 2014-01-17
 
 # built application files
-*.apk
 *.ap_
 
 # files for the dex VM
